@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/supabase.dart';
+import 'package:keep_my_notes/bootstrap/config/supabase.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
