@@ -1,39 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/bootstrap/config/supabase.dart';
+// import 'package:keep_my_notes/bootstrap/config/supabase.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  final _future = db.from('notes').select();
-
+  // final _future = db.from('notes').select();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: _future,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      body: ListView.builder(
+        itemCount: 1,
+        itemBuilder: ((context, index) {
+          // final note = todos[index];
 
-          final todos = snapshot.data!;
-
-          return ListView.builder(
-            itemCount: todos.length,
-            itemBuilder: ((context, index) {
-              final note = todos[index];
-
-              return ListTile(
-                title: Text(note['note']),
-              );
-            }),
+          return ListTile(
+            title: Text('Title'),
           );
-        },
+        }),
       ),
     );
   }
