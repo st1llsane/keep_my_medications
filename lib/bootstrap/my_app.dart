@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:keep_my_notes/domain/cubits/todo_cubit.dart';
+import 'package:keep_my_notes/domain/repos/todo/todo_repository.dart';
 import 'package:keep_my_notes/pages/home_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,9 +9,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BlocProvider(
+        create: (context) => TodoCubit(todoRepo: TodoRepository()),
+        child: const HomePage(),
+      ),
     );
   }
 }

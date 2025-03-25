@@ -3,8 +3,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> initSupabase() async {
-  await dotenv.load();
-
   final String? dbUrl = dotenv.env['DB_URL'];
   final String? anonKey = dotenv.env['ANON_KEY'];
 
@@ -17,5 +15,3 @@ Future<void> initSupabase() async {
     anonKey: anonKey,
   );
 }
-
-final db = Supabase.instance.client;

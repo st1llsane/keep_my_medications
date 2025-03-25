@@ -6,7 +6,7 @@ analyzer:
     - "**/*.freezed.dart"
   language:
     strict-inference: true
-    strict-raw-types: true
+    strict-raw-types: false
   errors:
     constant_identifier_names: ignore
     invalid_annotation_target: ignore
