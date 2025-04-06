@@ -4,8 +4,8 @@ import 'package:keep_my_notes/domain/cubits/todo_cubit.dart';
 import 'package:keep_my_notes/domain/repos/todo/todo_repository.dart';
 import 'package:keep_my_notes/pages/home_page.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class KeepMyNotes extends StatelessWidget {
+  const KeepMyNotes({super.key});
 
   @override
   Widget build(BuildContext context) {

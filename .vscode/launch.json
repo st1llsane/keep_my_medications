@@ -8,7 +8,8 @@
       "name": "dev",
       "request": "launch",
       "type": "dart",
-      "program": "lib/bootstrap/main.dart"
+      "program": "lib/bootstrap/main.dart",
+      "args": []
     },
     {
       "name": "profile mode",
