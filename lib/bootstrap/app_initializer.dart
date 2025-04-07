@@ -1,5 +1,5 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:keep_my_notes/config/supabase.dart';
+import 'package:keep_my_notes/config/supabase_config.dart';
 
 abstract class AppInitializer {
   static Future<void> initialize() async {
