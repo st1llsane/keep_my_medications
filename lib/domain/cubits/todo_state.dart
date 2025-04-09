@@ -4,7 +4,7 @@ part of 'todo_cubit.dart';
 sealed class TodoState {}
 
 final class TodoInitialState extends TodoState {
-  TodoInitialState({required this.todos});
+  // TodoInitialState({required this.todos});
 
-  final List<Todo> todos;
+  // final List<Todo> todos;
 }

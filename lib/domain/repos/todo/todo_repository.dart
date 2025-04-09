@@ -1,9 +1,8 @@
-import 'package:keep_my_notes/domain/models/todo/todo.dart';
 import 'package:keep_my_notes/domain/repos/note_repository.dart';
 
 class TodoRepository implements NoteRepository {
-  final List<Todo> _todos = [];
-  List<Todo> get todos => _todos;
+  // final List<Todo> _todos = [];
+  // List<Todo> get todos => _todos;
 
   @override
   void create() {
