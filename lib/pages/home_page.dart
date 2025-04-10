@@ -7,11 +7,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const NotesListView();
+
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.min,
         // children: [const MedicinesPage(), Expanded(child: NotesList())],
-        children: [const MedicinesPage(), NotesList()],
+        children: [const MedicinesPage(), NotesListView()],
       ),
     );
   }

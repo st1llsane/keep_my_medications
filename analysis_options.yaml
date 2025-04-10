@@ -4,6 +4,8 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+  plugins:
+    - custom_lint
   language:
     strict-inference: true
     strict-raw-types: false
@@ -11,11 +13,17 @@ analyzer:
     constant_identifier_names: ignore
     invalid_annotation_target: ignore
 
+formatter:
+  page_width: 80
+
 linter:
   rules:
     lines_longer_than_80_chars: false
     omit_local_variable_types: false
     avoid_positional_boolean_parameters: false
+    one_member_abstracts: false
+    public_member_api_docs: false
+    always_use_package_imports: true
     avoid_print: true
     prefer_const_constructors: true
     prefer_const_declarations: true
@@ -35,9 +43,11 @@ linter:
     empty_statements: true
     always_declare_return_types: true
     use_to_and_as_if_applicable: true
-    one_member_abstracts: true
     avoid_setters_without_getters: true
     avoid_return_types_on_setters: true
     hash_and_equals: true
     use_full_hex_values_for_flutter_colors: true
     use_late_for_private_fields_and_variables: true
+    unnecessary_getters_setters: true
+    directives_ordering: true
+    curly_braces_in_flow_control_structures: true

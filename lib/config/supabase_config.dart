@@ -10,5 +10,10 @@ Future<void> initSupabase() async {
     throw ErrorDescription('Forget to provide "DB_URL" or "DB_ANON_KEY?');
   }
 
-  await Supabase.initialize(url: dbUrl, anonKey: anonKey, debug: kDebugMode);
+  await Supabase.initialize(
+    url: dbUrl,
+    anonKey: anonKey,
+    headers: {'Content-Type': 'application/json'},
+    debug: kDebugMode,
+  );
 }
