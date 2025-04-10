@@ -4,7 +4,7 @@ part 'note.freezed.dart';
 part 'note.g.dart';
 
 @Freezed(copyWith: true, fromJson: true, toJson: true)
-abstract class Note with _$Note {
+sealed class Note with _$Note {
   const factory Note({
     required String id,
     required String title,

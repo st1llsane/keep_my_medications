@@ -10,7 +10,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         mainAxisSize: MainAxisSize.min,
-        children: [const MedicinesPage(), Expanded(child: NotesList())],
+        // children: [const MedicinesPage(), Expanded(child: NotesList())],
+        children: [const MedicinesPage(), NotesList()],
       ),
     );
   }
