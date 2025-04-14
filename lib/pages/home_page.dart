@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/features/medicines/presentation/pages/medicines_page.dart';
-import 'package:keep_my_notes/features/notes/notes_list.dart';
+import 'package:keep_my_notes/features/medicines/pages/medicines_page.dart';
+import 'package:keep_my_notes/features/notes/widgets/notes_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return const MedicinesPage();
+
     return const NotesListView();
 
     return Scaffold(

@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:keep_my_notes/features/notes/models/note.dart';
-import 'package:keep_my_notes/features/notes/notifiers/notes.dart';
+import 'package:keep_my_notes/features/notes/providers/notes.dart';
+import 'package:keep_my_notes/shared/build_context.dart';
 
 class NotesListView extends ConsumerWidget {
   const NotesListView({super.key});
@@ -54,7 +55,7 @@ class NotesList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<Note>> notes = ref.watch(notesProvider);
-    final double bottomPadding = MediaQuery.of(context).padding.bottom + 30;
+    final double bottomPadding = context.mediaQuery.padding.bottom + 30;
 
     return switch (notes) {
       AsyncData(:final value) => ListView.builder(
