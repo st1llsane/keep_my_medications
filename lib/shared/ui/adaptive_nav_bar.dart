@@ -12,7 +12,16 @@ class AdaptiveNavBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isAndroid ? AppBar() : CupertinoNavBar();
+    return Platform.isAndroid ? MaterialNavBar() : CupertinoNavBar();
+  }
+}
+
+class MaterialNavBar extends StatelessWidget {
+  const MaterialNavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(title: Text('Препараты'));
   }
 }
 

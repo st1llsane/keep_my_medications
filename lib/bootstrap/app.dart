@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_my_notes/domain/cubits/todo_cubit.dart';
 import 'package:keep_my_notes/domain/repos/todo/todo_repository.dart';
 import 'package:keep_my_notes/pages/home_page.dart';
+import 'package:keep_my_notes/shared/theme/theme_colors.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -12,10 +13,40 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        useMaterial3: true,
+        // colorScheme: ColorScheme(
+        //   brightness: brightness,
+        //   primary: primary,
+        //   onPrimary: onPrimary,
+        //   secondary: secondary,
+        //   onSecondary: onSecondary,
+        //   error: error,
+        //   onError: onError,
+        //   surface: surface,
+        //   onSurface: onSurface,
+        // ),
+        textTheme: TextTheme(bodyLarge: TextStyle(color: Colors.white)),
+        colorScheme: ColorScheme(
+          brightness: Brightness.light,
+          primary: Colors.red,
+          onPrimary: Colors.red,
+          secondary: Colors.red,
+          onSecondary: Colors.red,
+          error: Colors.red,
+          onError: Colors.red,
+          surface: Colors.red,
+          onSurface: Colors.white,
+        ),
+        scaffoldBackgroundColor: ThemeColors.background,
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          titleTextStyle: TextStyle(color: ThemeColors.background),
+          backgroundColor: ThemeColors.primary,
+        ),
         cupertinoOverrideTheme: CupertinoThemeData(
-          barBackgroundColor: const Color(
-            0xFF8bca9c,
-          ), // Устанавливает фон для AppBar и NavigationBar
+          barBackgroundColor:
+              ThemeColors
+                  .primary, // Устанавливает фон для AppBar и NavigationBar
         ),
       ),
       debugShowCheckedModeBanner: false,
