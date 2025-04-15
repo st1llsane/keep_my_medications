@@ -1,4 +1,4 @@
-package com.example.keep_my_notes
+package com.stillsane.keep_my_medications
 
 import io.flutter.embedding.android.FlutterActivity
 

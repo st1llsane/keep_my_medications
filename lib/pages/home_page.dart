@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/features/medicines/pages/medicines_page.dart';
+import 'package:keep_my_notes/features/medications/pages/medications_page.dart';
 import 'package:keep_my_notes/features/notes/widgets/notes_list.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MedicinesPage();
+    return const MedicationsPage();
 
     return const NotesListView();
 
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         // children: [const MedicinesPage(), Expanded(child: NotesList())],
-        children: [const MedicinesPage(), NotesListView()],
+        children: [const MedicationsPage(), NotesListView()],
       ),
     );
   }
