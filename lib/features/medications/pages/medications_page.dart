@@ -7,7 +7,7 @@ class MedicationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AdaptiveNavBar(),
+      appBar: AdaptiveNavBar(title: 'Препараты'),
       body: Column(children: [Text('fksdjflsdkf')]),
     );
   }
