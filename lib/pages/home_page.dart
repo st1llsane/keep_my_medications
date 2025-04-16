@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/features/medications/pages/medications_page.dart';
+import 'package:keep_my_notes/features/medications/presentation/pages/medications_page.dart';
 import 'package:keep_my_notes/features/notes/widgets/notes_list.dart';
 
 class HomePage extends StatelessWidget {

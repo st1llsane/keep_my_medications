@@ -1,0 +1,21 @@
+targets:
+  $default:
+    sources:
+      exclude:
+        - lib/shared/ui/**
+    builders:
+      json_serializable:
+        options:
+          field_rename: snake
+      freezed:
+        options:
+          to_json: false
+          from_json: false
+          format: false
+          copy_with: false
+          equal: false
+          map: false
+          when:
+            when: false
+            maybe_when: false
+            when_or_null: false
