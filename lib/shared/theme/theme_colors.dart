@@ -4,9 +4,10 @@ abstract class ThemeColors {
   // Main colors
   static const Color background = Color(0xFFFFFFFF);
   static const Color foreground = Color(0xFF1F2937);
+  static const Color foregroundSecondary = Color(0xFF4B5563);
   static const Color primary = Color(0xFF4B90E2);
-  static const Color secondary = Color(0xFFEEEFF2);
-  static const Color secondaryDark = Color(0xFFD1D5DB);
+  static const Color secondary = Color(0xFFE9EAEE);
+  static const Color secondaryDark = Color(0xFFD6DADF);
 
   // Accent colors
   static const Color accent1 = Color(0xFF50C879);

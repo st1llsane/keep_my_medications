@@ -10,8 +10,10 @@ abstract class Medication with _$Medication {
     required int id,
     required String? name,
     required String? description,
-    required String? dosage,
     required MedicationTimePeriod timePeriod,
+    required double? dose,
+    required int? perDayCount,
+    required int takenToday,
     required String createdAt,
     required String? updatedAt,
   }) = _Medication;

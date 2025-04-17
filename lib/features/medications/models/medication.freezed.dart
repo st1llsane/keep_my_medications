@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Medication {
 
- int get id; String? get name; String? get description; String? get dosage; MedicationTimePeriod get timePeriod; String get createdAt; String? get updatedAt;
+ int get id; String? get name; String? get description; MedicationTimePeriod get timePeriod; double? get dose; int? get perDayCount; int get takenToday; String get createdAt; String? get updatedAt;
 
   /// Serializes this Medication to a JSON map.
   Map<String, dynamic> toJson();
@@ -26,7 +26,7 @@ mixin _$Medication {
 
 @override
 String toString() {
-  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, timePeriod: $timePeriod, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'Medication(id: $id, name: $name, description: $description, timePeriod: $timePeriod, dose: $dose, perDayCount: $perDayCount, takenToday: $takenToday, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -39,14 +39,16 @@ String toString() {
 @JsonSerializable()
 
 class _Medication implements Medication {
-  const _Medication({required this.id, required this.name, required this.description, required this.dosage, required this.timePeriod, required this.createdAt, required this.updatedAt});
+  const _Medication({required this.id, required this.name, required this.description, required this.timePeriod, required this.dose, required this.perDayCount, required this.takenToday, required this.createdAt, required this.updatedAt});
   factory _Medication.fromJson(Map<String, dynamic> json) => _$MedicationFromJson(json);
 
 @override final  int id;
 @override final  String? name;
 @override final  String? description;
-@override final  String? dosage;
 @override final  MedicationTimePeriod timePeriod;
+@override final  double? dose;
+@override final  int? perDayCount;
+@override final  int takenToday;
 @override final  String createdAt;
 @override final  String? updatedAt;
 
@@ -60,7 +62,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, timePeriod: $timePeriod, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'Medication(id: $id, name: $name, description: $description, timePeriod: $timePeriod, dose: $dose, perDayCount: $perDayCount, takenToday: $takenToday, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
