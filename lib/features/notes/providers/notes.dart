@@ -1,5 +1,5 @@
 import 'package:keep_my_notes/features/notes/models/note.dart';
-import 'package:keep_my_notes/shared/globals.dart';
+import 'package:keep_my_notes/shared/global.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'notes.g.dart';

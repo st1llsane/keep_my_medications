@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:keep_my_notes/shared/enums.dart';
 
 part 'medication.freezed.dart';
 part 'medication.g.dart';
@@ -6,10 +7,11 @@ part 'medication.g.dart';
 @Freezed(fromJson: true, toJson: true)
 abstract class Medication with _$Medication {
   const factory Medication({
-    required String id,
+    required int id,
     required String? name,
     required String? description,
-    required double? dosage,
+    required String? dosage,
+    required MedicationTimePeriod timePeriod,
     required String createdAt,
     required String? updatedAt,
   }) = _Medication;

@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Medication {
 
- String get id; String? get name; String? get description; double? get dosage; String get createdAt; String? get updatedAt;
+ int get id; String? get name; String? get description; String? get dosage; MedicationTimePeriod get timePeriod; String get createdAt; String? get updatedAt;
 
   /// Serializes this Medication to a JSON map.
   Map<String, dynamic> toJson();
@@ -26,7 +26,7 @@ mixin _$Medication {
 
 @override
 String toString() {
-  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, timePeriod: $timePeriod, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -39,13 +39,14 @@ String toString() {
 @JsonSerializable()
 
 class _Medication implements Medication {
-  const _Medication({required this.id, required this.name, required this.description, required this.dosage, required this.createdAt, required this.updatedAt});
+  const _Medication({required this.id, required this.name, required this.description, required this.dosage, required this.timePeriod, required this.createdAt, required this.updatedAt});
   factory _Medication.fromJson(Map<String, dynamic> json) => _$MedicationFromJson(json);
 
-@override final  String id;
+@override final  int id;
 @override final  String? name;
 @override final  String? description;
-@override final  double? dosage;
+@override final  String? dosage;
+@override final  MedicationTimePeriod timePeriod;
 @override final  String createdAt;
 @override final  String? updatedAt;
 
@@ -59,7 +60,7 @@ Map<String, dynamic> toJson() {
 
 @override
 String toString() {
-  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'Medication(id: $id, name: $name, description: $description, dosage: $dosage, timePeriod: $timePeriod, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
