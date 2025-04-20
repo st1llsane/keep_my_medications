@@ -11,7 +11,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:keep_my_notes/features/medications/data/data_sources/medications_data_source_impl.dart'
+import 'package:keep_my_notes/features/medications/data/data_sources/medications_data_source.dart'
     as _i598;
 import 'package:keep_my_notes/features/medications/data/repositories/medications_repository.dart'
     as _i1049;
