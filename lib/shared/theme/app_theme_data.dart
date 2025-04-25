@@ -11,10 +11,10 @@ class AppThemeData {
       textTheme: const TextTheme(
         bodySmall: ThemeTextStyles.bodyTextS,
         bodyMedium: ThemeTextStyles.bodyTextM,
-        bodyLarge: ThemeTextStyles.bodyTextL,
-        titleSmall: ThemeTextStyles.headingS,
+        bodyLarge: ThemeTextStyles.bodyText14,
+        titleSmall: ThemeTextStyles.heading20,
         titleMedium: ThemeTextStyles.headingM,
-        titleLarge: ThemeTextStyles.headingL,
+        titleLarge: ThemeTextStyles.heading22,
       ),
       colorScheme: const ColorScheme.light(
         primary: Colors.red,

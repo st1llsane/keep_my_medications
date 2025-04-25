@@ -16,7 +16,7 @@ class MedicationTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
         color: ThemeColors.background,
-        borderRadius: ThemeRadiuses.radiusGeometryM,
+        borderRadius: ThemeRadiuses.radiusGeometry12,
         border: Border.all(color: ThemeColors.secondary),
       ),
       child: Column(
@@ -31,7 +31,7 @@ class MedicationTile extends StatelessWidget {
             RichText(
               textAlign: TextAlign.start,
               text: TextSpan(
-                style: ThemeTextStyles.subheadingL.copyWith(
+                style: ThemeTextStyles.subheading18.copyWith(
                   color: ThemeColors.foregroundSecondary,
                 ),
                 children: [
@@ -55,14 +55,14 @@ class MedicationTile extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 1),
                   decoration: BoxDecoration(
                     color: ThemeColors.secondary,
-                    borderRadius: ThemeRadiuses.radiusGeometryMax,
+                    borderRadius: ThemeRadiuses.radiusGeometry50,
                   ),
                 ),
               ),
               if (medication.perDayCount != null)
                 Text(
                   medication.perDayCount.toString(),
-                  style: ThemeTextStyles.subheadingM.copyWith(
+                  style: ThemeTextStyles.subheading16.copyWith(
                     color: ThemeColors.foregroundSecondary,
                   ),
                 ),
