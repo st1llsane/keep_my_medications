@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/pages/home_page.dart';
+import 'package:keep_my_notes/router/router_config.dart';
 import 'package:keep_my_notes/shared/theme/app_theme_data.dart';
 
 class App extends StatelessWidget {
@@ -7,10 +7,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: AppThemeData.light,
+    return MaterialApp.router(
+      theme: AppThemeData.theme,
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      routerConfig: router,
     );
   }
 }

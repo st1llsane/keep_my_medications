@@ -1,13 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:keep_my_notes/features/medications/presentation/pages/medications_page.dart';
 import 'package:keep_my_notes/features/notes/widgets/notes_list.dart';
+import 'package:keep_my_notes/shared/extensions/build_context_extensions.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MedicationsPage();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: TextButton(
+                onPressed: () => context.routeNavigator.pushMedicationsPage(),
+                child: Text('Препараты'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    // return const MedicationsPage();
 
     return const NotesListView();
 
