@@ -21,4 +21,11 @@ abstract class ThemeColors {
 
   // System colors
   static const Color success = Color(0xFF50C879);
+
+  // Mood colors
+  static const Color moodGreat = Color(0xFF4ade80);
+  static const Color moodGood = Color(0xFFbef264);
+  static const Color okay = Color(0xFFfde047);
+  static const Color moodNotOkay = Color(0xFFfb923c);
+  static const Color moodBad = Color(0xFFef4444);
 }

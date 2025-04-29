@@ -10,4 +10,8 @@ final class RouteNavigator {
   void pushMedicationsPage() {
     context.push(AppRoutes.medications.path);
   }
+
+  void pushMoodPage() {
+    context.push(AppRoutes.mood.path);
+  }
 }

@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:keep_my_notes/features/mood/presentation/pages/mood_page_outlet.dart';
+import 'package:keep_my_notes/router/routes.dart';
+import 'package:keep_my_notes/shared/ui/adaptive_page.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
-final ShellRoute testShell = ShellRoute(
-  // builder: (context, state, child) => Parent(child: child),
-  builder: (context, state, child) => _ExampleHome(nestedNavigator: child),
+final ShellRoute moodRoutes = ShellRoute(
+  pageBuilder:
+      (context, state, navigator) => AdaptivePage(
+        name: AppRoutes.moodOutlet.name,
+        child: MoodPageOutlet(navigator: navigator),
+      ),
   routes: [
     GoRoute(
-      path: '/test1',
-      name: 'test1',
-      // builder: (context, state) => Test1(),
+      path: AppRoutes.mood.path,
+      name: AppRoutes.mood.name,
       pageBuilder: (context, state) {
-        // return PagedSheetPage(child: Test1());
         return PagedSheetPage(
           key: state.pageKey,
+          name: AppRoutes.mood.name,
           snapGrid: const SheetSnapGrid(
-            snaps: [SheetOffset(0.8), SheetOffset(1)],
+            snaps: [SheetOffset(0.3), SheetOffset(1)],
           ),
           child: const _ExampleSheetContent(
             title: '/a',
@@ -26,47 +31,25 @@ final ShellRoute testShell = ShellRoute(
       },
     ),
     GoRoute(
-      path: '/test2',
-      name: 'test2',
-      pageBuilder: (context, state) => PagedSheetPage(child: Test2()),
+      path: '/test-2',
+      name: 'test-2',
+      pageBuilder: (context, state) {
+        return PagedSheetPage(
+          key: state.pageKey,
+          name: 'test-2',
+          snapGrid: const SheetSnapGrid(
+            snaps: [SheetOffset(0.5), SheetOffset(1)],
+          ),
+          child: const _ExampleSheetContent(
+            title: '/a',
+            heightFactor: 0.8,
+            destinations: ['/a/details', '/b'],
+          ),
+        );
+      },
     ),
   ],
 );
-
-class _ExampleHome extends StatelessWidget {
-  const _ExampleHome({required this.nestedNavigator});
-
-  final Widget nestedNavigator;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        const Scaffold(backgroundColor: Colors.yellow),
-        SheetViewport(child: _ExampleSheet(nestedNavigator: nestedNavigator)),
-      ],
-    );
-  }
-}
-
-class _ExampleSheet extends StatelessWidget {
-  const _ExampleSheet({required this.nestedNavigator});
-
-  final Widget nestedNavigator;
-
-  @override
-  Widget build(BuildContext context) {
-    return PagedSheet(
-      decoration: MaterialSheetDecoration(
-        size: SheetSize.stretch,
-        color: Theme.of(context).colorScheme.primary,
-        borderRadius: BorderRadius.circular(16),
-        clipBehavior: Clip.antiAlias,
-      ),
-      navigator: nestedNavigator,
-    );
-  }
-}
 
 class Parent extends StatelessWidget {
   const Parent({super.key, required this.child});
@@ -81,41 +64,6 @@ class Parent extends StatelessWidget {
           Expanded(child: Container(color: Colors.yellow)),
           Expanded(child: child),
         ],
-      ),
-    );
-  }
-}
-
-class Test1 extends StatelessWidget {
-  const Test1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Column(
-        children: [
-          TextButton(
-            onPressed: () => context.goNamed('test2'),
-            child: Text('TEST 2'),
-          ),
-          TextButton(onPressed: () => context.pop(), child: Text('POP')),
-        ],
-      ),
-    );
-  }
-}
-
-class Test2 extends StatelessWidget {
-  const Test2({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: TextButton(
-        onPressed: () => context.goNamed('test1'),
-        child: Text('TEST 1'),
       ),
     );
   }
@@ -161,6 +109,10 @@ class _ExampleSheetContent extends StatelessWidget {
                     onPressed: () => context.go(dest),
                     child: Text('Go To $dest'),
                   ),
+                TextButton(
+                  onPressed: () => context.push('/test-2'),
+                  child: Text('TEST 2'),
+                ),
                 TextButton(onPressed: () => context.pop(), child: Text('POP')),
               ],
             ),
