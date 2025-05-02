@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:keep_my_notes/features/mood/presentation/pages/mood_page_outlet.dart';
+import 'package:keep_my_notes/features/mood/presentation/widgets/mood_tile_list.dart';
 import 'package:keep_my_notes/router/routes.dart';
 import 'package:keep_my_notes/shared/ui/adaptive_page.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
@@ -19,14 +20,15 @@ final ShellRoute moodRoutes = ShellRoute(
         return PagedSheetPage(
           key: state.pageKey,
           name: AppRoutes.mood.name,
-          snapGrid: const SheetSnapGrid(
-            snaps: [SheetOffset(0.3), SheetOffset(1)],
-          ),
-          child: const _ExampleSheetContent(
-            title: '/a',
-            heightFactor: 0.5,
-            destinations: ['/a/details', '/b'],
-          ),
+          // snapGrid: const SheetSnapGrid(
+          //   snaps: [SheetOffset(0.1), SheetOffset(1)],
+          // ),
+          // child: const _ExampleSheetContent(
+          //   title: '/a',
+          //   heightFactor: 0.9,
+          //   destinations: ['/a/details', '/b'],
+          // ),
+          child: MoodTileList(),
         );
       },
     ),

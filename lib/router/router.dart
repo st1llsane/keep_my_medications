@@ -26,9 +26,9 @@ final GoRouter router = GoRouter(
 );
 
 class _NavigatorObserver extends NavigatorObserver {
-  @override
-  void didChangeTop(Route topRoute, Route? previousTopRoute) {
-    super.didChangeTop(topRoute, previousTopRoute);
-    print('${previousTopRoute?.settings.name} -> ${topRoute.settings.name}');
-  }
+  // @override
+  // void didChangeTop(Route topRoute, Route? previousTopRoute) {
+  //   super.didChangeTop(topRoute, previousTopRoute);
+  //   print('${previousTopRoute?.settings.name} -> ${topRoute.settings.name}');
+  // }
 }
