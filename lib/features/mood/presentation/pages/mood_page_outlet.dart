@@ -32,7 +32,7 @@ class _MoodPageOutletState extends State<MoodPageOutlet> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        MoodSmileView(),
+        MoodSmileView(sheetController: _sheetController),
         SheetViewport(
           child: PagedSheet(
             controller: _sheetController,
