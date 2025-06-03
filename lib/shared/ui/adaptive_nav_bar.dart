@@ -34,11 +34,11 @@ class CupertinoNavBar extends NavBar {
   @override
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
-      middle: Text(title, style: ThemeTextStyles.headingM),
+      middle: Text(title, style: ThemeTextStyles.heading18),
       previousPageTitle: 'Назад',
       padding: const EdgeInsetsDirectional.only(bottom: 8),
       border: const Border(
-        bottom: BorderSide(width: 1, color: ThemeColors.secondary),
+        bottom: BorderSide(width: 1, color: ThemeColors.border),
       ),
     );
   }
@@ -49,6 +49,6 @@ class MaterialNavBar extends NavBar {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: Text(title, style: ThemeTextStyles.headingM));
+    return AppBar(title: Text(title, style: ThemeTextStyles.heading18));
   }
 }

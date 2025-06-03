@@ -12,12 +12,15 @@ class AppThemeData {
         bodySmall: ThemeTextStyles.bodyTextS,
         bodyMedium: ThemeTextStyles.bodyTextM,
         bodyLarge: ThemeTextStyles.bodyText14,
-        titleSmall: ThemeTextStyles.heading20,
-        titleMedium: ThemeTextStyles.headingM,
+        headlineSmall: ThemeTextStyles.subheading14,
+        headlineMedium: ThemeTextStyles.subheading16,
+        headlineLarge: ThemeTextStyles.subheading18,
+        titleSmall: ThemeTextStyles.heading18,
+        titleMedium: ThemeTextStyles.heading20,
         titleLarge: ThemeTextStyles.heading22,
       ),
       colorScheme: const ColorScheme.light(
-        primary: Colors.red,
+        primary: CupertinoColors.systemBlue,
         onPrimary: Colors.white,
         secondary: Colors.red,
         onSecondary: Colors.white,
@@ -29,11 +32,8 @@ class AppThemeData {
       scaffoldBackgroundColor: ThemeColors.background,
       appBarTheme: const AppBarTheme(
         backgroundColor: ThemeColors.background,
-        titleTextStyle: TextStyle(
-          color: ThemeColors.foreground,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
+        titleTextStyle: ThemeTextStyles.heading18,
+        // actionsIconTheme: IconThemeData(),
         centerTitle: true,
       ),
       cupertinoOverrideTheme: const CupertinoThemeData(

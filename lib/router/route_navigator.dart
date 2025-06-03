@@ -7,11 +7,11 @@ final class RouteNavigator {
 
   final BuildContext context;
 
-  void pushMedicationsPage() {
+  void medications() {
     context.push(AppRoutes.medications.path);
   }
 
-  void pushMoodPage() {
+  void mood() {
     context.push(AppRoutes.mood.path);
   }
 }

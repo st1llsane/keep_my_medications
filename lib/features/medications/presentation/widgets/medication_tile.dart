@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keep_my_notes/features/medications/models/medication.dart';
+import 'package:keep_my_notes/shared/extensions/build_context_extension.dart';
 import 'package:keep_my_notes/shared/theme/theme_colors.dart';
 import 'package:keep_my_notes/shared/theme/theme_radiuses.dart';
 import 'package:keep_my_notes/shared/theme/theme_text_styles.dart';
@@ -25,7 +26,8 @@ class MedicationTile extends StatelessWidget {
         children: [
           Text(
             medication.name ?? 'Без названия',
-            style: ThemeTextStyles.headingM,
+            // style: ThemeTextStyles.heading20,
+            style: context.textTheme.titleMedium,
           ),
           if (medication.description != null)
             RichText(

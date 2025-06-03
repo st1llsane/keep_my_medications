@@ -6,21 +6,15 @@ import 'package:keep_my_notes/router/routes/medications_routes.dart';
 import 'package:keep_my_notes/router/routes/mood_routes.dart';
 import 'package:keep_my_notes/shared/ui/adaptive_page.dart';
 
+part 'routes/home_routes.dart';
+
 final _navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 final GoRouter router = GoRouter(
   navigatorKey: _navigatorKey,
-  initialLocation: AppRoutes.home.path,
-  routes: [
-    GoRoute(
-      path: AppRoutes.home.path,
-      name: AppRoutes.home.name,
-      pageBuilder:
-          (_, _) =>
-              AdaptivePage(name: AppRoutes.home.name, child: const HomePage()),
-      routes: [...medicationsRoutes, moodRoutes],
-    ),
-  ],
+  // initialLocation: AppRoutes.home.path,
+  initialLocation: AppRoutes.medications.path,
+  routes: [homeRoutes],
   debugLogDiagnostics: true,
   observers: [_NavigatorObserver()],
 );

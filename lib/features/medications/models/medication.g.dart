@@ -14,7 +14,7 @@ _Medication _$MedicationFromJson(Map<String, dynamic> json) => _Medication(
   dose: (json['dose'] as num?)?.toDouble(),
   perDayCount: (json['per_day_count'] as num?)?.toInt(),
   takenToday: (json['taken_today'] as num).toInt(),
-  createdAt: json['created_at'] as String,
+  createdAt: json['created_at'] as String?,
   updatedAt: json['updated_at'] as String?,
 );
 

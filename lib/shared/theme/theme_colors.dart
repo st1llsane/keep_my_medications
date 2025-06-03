@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class ThemeColors {
-  // Main colors
+  // Main
   static const Color background = Color(0xFFFFFFFF);
   static const Color foreground = Color(0xFF1F2937);
   static const Color foregroundSecondary = Color(0xFF4B5563);
@@ -9,7 +9,7 @@ abstract class ThemeColors {
   static const Color secondary = Color(0xFFE9EAEE);
   static const Color secondaryDark = Color(0xFFD6DADF);
 
-  // Accent colors
+  // Accent
   static const Color accent1 = Color(0xFF50C879);
   static const Color accent1Light = Color(0xFFEFF9F1);
   static const Color accent2 = Color(0xFFFFC008);
@@ -19,10 +19,13 @@ abstract class ThemeColors {
   static const Color accent4 = Color(0xFFDC2625);
   static const Color accent4Light = Color(0xFFFEF2F2);
 
-  // System colors
+  // Border
+  static const Color border = Color(0xFFE9EAEE);
+
+  // System
   static const Color success = Color(0xFF50C879);
 
-  // Mood colors
+  // Mood
   static const Color moodGreat = Color(0xFF4ade80);
   static const Color moodGood = Color(0xFFbef264);
   static const Color okay = Color(0xFFfde047);

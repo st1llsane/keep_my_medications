@@ -43,13 +43,13 @@ abstract class ThemeTextStyles {
   );
 
   // Heading
-  static const TextStyle heading20 = TextStyle(
+  static const TextStyle heading18 = TextStyle(
     color: ThemeColors.foreground,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.w700,
     height: 1,
   );
-  static const TextStyle headingM = TextStyle(
+  static const TextStyle heading20 = TextStyle(
     color: ThemeColors.foreground,
     fontSize: 20,
     fontWeight: FontWeight.w700,

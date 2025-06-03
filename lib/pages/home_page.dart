@@ -19,14 +19,14 @@ class HomePage extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () => context.routeNavigator.pushMedicationsPage(),
+                onPressed: () => context.routeNavigator.medications(),
                 child: Text('Препараты'),
               ),
             ),
             Align(
               alignment: Alignment.center,
               child: TextButton(
-                onPressed: () => context.routeNavigator.pushMoodPage(),
+                onPressed: () => context.routeNavigator.mood(),
                 child: Text('Настроение'),
               ),
             ),

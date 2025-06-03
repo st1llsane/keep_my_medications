@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Medication {
 
- int get id; String? get name; String? get description; MedicationTimePeriod get timePeriod; double? get dose; int? get perDayCount; int get takenToday; String get createdAt; String? get updatedAt;
+ int get id; String? get name; String? get description; MedicationTimePeriod get timePeriod; double? get dose; int? get perDayCount; int get takenToday; String? get createdAt; String? get updatedAt;
 
   /// Serializes this Medication to a JSON map.
   Map<String, dynamic> toJson();
@@ -49,7 +49,7 @@ class _Medication implements Medication {
 @override final  double? dose;
 @override final  int? perDayCount;
 @override final  int takenToday;
-@override final  String createdAt;
+@override final  String? createdAt;
 @override final  String? updatedAt;
 
 
