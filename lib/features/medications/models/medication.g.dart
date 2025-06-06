@@ -9,6 +9,7 @@ part of 'medication.dart';
 _Medication _$MedicationFromJson(Map<String, dynamic> json) => _Medication(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String?,
+  shortDescription: json['short_description'] as String?,
   description: json['description'] as String?,
   timePeriod: $enumDecode(_$MedicationTimePeriodEnumMap, json['time_period']),
   dose: (json['dose'] as num?)?.toDouble(),
@@ -22,6 +23,7 @@ Map<String, dynamic> _$MedicationToJson(_Medication instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'short_description': instance.shortDescription,
       'description': instance.description,
       'time_period': _$MedicationTimePeriodEnumMap[instance.timePeriod]!,
       'dose': instance.dose,

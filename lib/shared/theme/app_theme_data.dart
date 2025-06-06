@@ -8,6 +8,17 @@ class AppThemeData {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
+      scaffoldBackgroundColor: ThemeColors.background,
+      colorScheme: const ColorScheme.light(
+        primary: CupertinoColors.systemBlue,
+        onPrimary: Colors.white,
+        secondary: Colors.red,
+        onSecondary: Colors.white,
+        error: Colors.red,
+        onError: Colors.white,
+        surface: Colors.red,
+        onSurface: Colors.white,
+      ),
       textTheme: const TextTheme(
         bodySmall: ThemeTextStyles.bodyTextS,
         bodyMedium: ThemeTextStyles.bodyTextM,
@@ -19,17 +30,6 @@ class AppThemeData {
         titleMedium: ThemeTextStyles.heading20,
         titleLarge: ThemeTextStyles.heading22,
       ),
-      colorScheme: const ColorScheme.light(
-        primary: CupertinoColors.systemBlue,
-        onPrimary: Colors.white,
-        secondary: Colors.red,
-        onSecondary: Colors.white,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: Colors.red,
-        onSurface: Colors.white,
-      ),
-      scaffoldBackgroundColor: ThemeColors.background,
       appBarTheme: const AppBarTheme(
         backgroundColor: ThemeColors.background,
         titleTextStyle: ThemeTextStyles.heading18,

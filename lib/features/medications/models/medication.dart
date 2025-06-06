@@ -9,6 +9,7 @@ abstract class Medication with _$Medication {
   const factory Medication({
     required int id,
     required String? name,
+    required String? shortDescription,
     required String? description,
     required MedicationTimePeriod timePeriod,
     required double? dose,
@@ -20,8 +21,9 @@ abstract class Medication with _$Medication {
 
   factory Medication.mock() => const Medication(
     id: 0,
-    name: 'name',
-    description: 'description',
+    name: 'Название',
+    shortDescription: 'Короткое описание',
+    description: 'Полное описание',
     timePeriod: MedicationTimePeriod.morning,
     dose: 1,
     perDayCount: 1,
@@ -33,7 +35,3 @@ abstract class Medication with _$Medication {
   factory Medication.fromJson(Map<String, Object?> json) =>
       _$MedicationFromJson(json);
 }
-
-// abstract interface class Mockable<T> {
-//   T mock();
-// }

@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:keep_my_notes/shared/extensions/build_context_extension.dart';
 import 'package:keep_my_notes/shared/theme/theme_colors.dart';
-import 'package:keep_my_notes/shared/theme/theme_text_styles.dart';
 
 class AdaptiveNavBar extends StatelessWidget implements PreferredSizeWidget {
   const AdaptiveNavBar({super.key, required this.title});
@@ -34,7 +34,7 @@ class CupertinoNavBar extends NavBar {
   @override
   Widget build(BuildContext context) {
     return CupertinoNavigationBar(
-      middle: Text(title, style: ThemeTextStyles.heading18),
+      middle: Text(title, style: context.textTheme.titleMedium),
       previousPageTitle: 'Назад',
       padding: const EdgeInsetsDirectional.only(bottom: 8),
       border: const Border(
@@ -49,6 +49,6 @@ class MaterialNavBar extends NavBar {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: Text(title, style: ThemeTextStyles.heading18));
+    return AppBar(title: Text(title, style: context.textTheme.titleMedium));
   }
 }

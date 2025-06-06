@@ -1,0 +1,144 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Правила для написания нового функционала
+globs: 
+alwaysApply: false
+---
+
+# Правила генерации кода
+
+**Цель:** Создание production-ready кода с использованием Dart, Flutter и пакетов из [pubspec.yaml](mdc:pubspec.yaml)
+
+## Главные правила
+- Локализация текста на русский и английский языки
+- Использовать Bloc и Cubit в зависимости от ситуации
+
+## Архитектурные правила
+
+- Следовать clean architecture
+- Следовать SOLID
+- Для нового функционала создавать новую feature:
+
+1. Presentation: 
+   - Bloc/Cubit для управления состоянием
+   - pages
+   - widgets
+
+2. Domain:
+   - models
+   - Интерфейсы репозиториев
+
+3. Data:
+   - Supabase для бэкенда
+   - Реализация репозиториев
+
+## Критические ограничения
+
+1. Использование controller'ов внутри Bloc/Cubit
+2. Прямые вызовы Supabase из UI-слоя
+3. Навигация через Navigator.push
+4. Хардкод строк без локализации
+
+## Требования к безопасности
+
+- Все секреты через .env
+- Валидация данных на всех уровнях
+- Обработка ошибок с пользовательскими сообщениями
+
+## Формат вывода
+
+```страницы
+// [НАЗВАНИЕ ФАЙЛА И СТРАНИЦЫ]
+```
+
+```виджеты
+// [НАЗВАНИЕ ФАЙЛА И ВИДЖЕТА]
+```
+
+```blocs/cubits
+// [НАЗВАНИЕ БЛОКА/КУБИТА]
+```
+
+```repositories
+// [НАЗВАНИЕ РЕПОЗИТОРИЯ]
+```
+
+```dependencies
+// [НАЗВАНИЕ ПАКЕТА]
+```
+
+```routes
+// [НАЗВАНИЕ РОУТА]
+```
+
+```todo
+// [ТОЧКИ ДЛЯ РАСШИРЕНИЯ]
+```
+
+```desctiption
+// [РАЗВЕРНУТОЕ ОБЪЯСНЕНИЕ, ЧТО БЫЛО ДОБАВЛЕНО И ПОЧЕМУ]
+```
+
+## Идеальный пример
+
+```feature-request
+## Требуемый функционал
+
+Профиль пользователя с:
+- Просмотром основной информации
+- Редактированием имени
+- Историей заказов
+
+## Бизнес-логика
+- Данные загружаются при открытии экрана
+- Редактирование через debounce 500ms
+- Кэширование на 10 минут
+
+## Дизайн-требования
+Material 3, адаптивный layout, темная тема
+```
+
+```dart
+// profile_screen.dart
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => getIt<UserBloc>()..add(LoadUserEvent()),
+      child: const ProfileView(),
+    );
+  }
+}
+
+class ProfileView extends StatelessWidget {
+  const ProfileView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SheetScaffold(
+      body: BlocBuilder<UserBloc, UserState>(
+        builder: (context, state) {
+          return state.when(
+            initial: () => const Center(child: CircularProgressIndicator()),
+            loading: () => const Center(child: CircularProgressIndicator()),
+            loaded: (user) => _ProfileContent(user: user),
+            error: (message) => Center(child: Text(message)),
+          );
+        },
+      ),
+    );
+  }
+}
+```
+
+```todo
+1. Добавить pull-to-refresh
+2. Реализовать валидацию поля имени
+3. Добавить анимацию перехода
+```
