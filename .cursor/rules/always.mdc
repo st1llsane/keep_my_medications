@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+## Команды
+
+- Используй "flutter pub run", вместо "dart run"

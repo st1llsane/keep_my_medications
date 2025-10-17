@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
+import 'package:keep_my_notes/configs/supabase_config.dart';
 import 'package:keep_my_notes/features/medications/models/medication.dart';
-import 'package:keep_my_notes/shared/global.dart';
 
 abstract interface class MedicationsDataSource {
   Future<List<Medication>> getMedications();

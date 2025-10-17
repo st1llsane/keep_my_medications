@@ -2,7 +2,8 @@ targets:
   $default:
     sources:
       exclude:
-        - lib/shared/ui/**
+        - lib/app/router/**
+        - lib/app/shared/widgets/**
     builders:
       json_serializable:
         options:

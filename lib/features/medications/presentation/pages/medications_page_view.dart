@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:keep_my_notes/features/medications/models/medication.dart';
+import 'package:keep_my_notes/features/medications/models/medication_mock_factory.dart';
 import 'package:keep_my_notes/features/medications/models/states/medications_state.dart';
 import 'package:keep_my_notes/features/medications/presentation/widgets/medication_tile.dart';
 import 'package:keep_my_notes/features/medications/presentation/widgets/medications_progress_section.dart';
@@ -13,15 +14,15 @@ class MedicationsPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     // final MedicationsState(:medications) = state;
     final medications = [
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
-      Medication.mock(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
+      MedicationMockFactory.defaultMedication(),
     ];
 
     // TODO: Вынести наверх

@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
+import 'package:keep_my_notes/app/shared/theme/theme_radiuses.dart';
+import 'package:keep_my_notes/features/mood/presentation/widgets/mood_smile_view.dart';
+import 'package:smooth_sheets/smooth_sheets.dart';
+
+class MoodPage extends StatefulWidget {
+  const MoodPage({super.key, required this.navigator});
+
+  final Widget navigator;
+
+  @override
+  State<MoodPage> createState() => _MoodPageState();
+}
+
+class _MoodPageState extends State<MoodPage> {
+  late final SheetController _sheetController;
+
+  @override
+  void initState() {
+    super.initState();
+    _sheetController = SheetController();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        MoodSmileView(sheetController: _sheetController),
+        SheetViewport(
+          child: PagedSheet(
+            controller: _sheetController,
+            decoration: MaterialSheetDecoration(
+              size: SheetSize.fit,
+              color: ThemeColors.background,
+              borderRadius: ThemeRadiuses.radiusGeometry16,
+              clipBehavior: Clip.antiAlias,
+            ),
+            navigator: widget.navigator,
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  void dispose() {
+    _sheetController.dispose();
+    super.dispose();
+  }
+}

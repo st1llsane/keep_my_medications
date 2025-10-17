@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:keep_my_notes/shared/enums.dart';
+import 'package:keep_my_notes/app/shared/enums/medication_time_period.dart';
 
 part 'medication.freezed.dart';
 part 'medication.g.dart';
 
-@Freezed(fromJson: true, toJson: true)
+@Freezed(copyWith: true, fromJson: true, toJson: true)
 abstract class Medication with _$Medication {
   const factory Medication({
     required int id,
@@ -18,19 +18,6 @@ abstract class Medication with _$Medication {
     required String? createdAt,
     required String? updatedAt,
   }) = _Medication;
-
-  factory Medication.mock() => const Medication(
-    id: 0,
-    name: 'Название',
-    shortDescription: 'Короткое описание',
-    description: 'Полное описание',
-    timePeriod: MedicationTimePeriod.morning,
-    dose: 1,
-    perDayCount: 1,
-    takenToday: 1,
-    createdAt: null,
-    updatedAt: null,
-  );
 
   factory Medication.fromJson(Map<String, Object?> json) =>
       _$MedicationFromJson(json);

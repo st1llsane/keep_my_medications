@@ -4,8 +4,9 @@ globs:
 alwaysApply: false
 ---
 ---
+
 description: Правила для создания UI из скриншота
-globs: 
+globs:
 alwaysApply: false
 ---
 
@@ -41,9 +42,11 @@ alwaysApply: false
 ```generated-ui
 // [ПЕРЕЧИСЛЕНИЕ, ЧТО БЫЛО СДЕЛАНО]
 ```
+
 ```style-guide
 // [ПЕРЕЧИСЛЕНИЕ ИСПОЛЬЗОВАННЫХ СТИЛЕЙ]
 ```
+
 ```todo
 // [ЭЛЕМЕНТЫ, ТРЕБУЮЩИЕ РУЧНОЙ ДОРАБОТКИ]
 ```
