@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_radiuses.dart';
-import 'package:keep_my_notes/features/mood/presentation/widgets/mood_smile_view.dart';
+import 'package:keep_my_notes/app/shared/widgets/widgets_exports.dart';
+import 'package:keep_my_notes/features/mood/presentation/widgets/mood_view.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
 class MoodPage extends StatefulWidget {
@@ -24,23 +24,30 @@ class _MoodPageState extends State<MoodPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        MoodSmileView(sheetController: _sheetController),
-        SheetViewport(
-          child: PagedSheet(
-            controller: _sheetController,
-            decoration: MaterialSheetDecoration(
-              size: SheetSize.fit,
-              color: ThemeColors.background,
-              borderRadius: ThemeRadiuses.radiusGeometry16,
-              clipBehavior: Clip.antiAlias,
-            ),
-            navigator: widget.navigator,
-          ),
-        ),
-      ],
+    return AdaptiveScaffold(
+      title: 'Mood',
+      showAppBar: true,
+      child: SafeArea(bottom: false, child: MoodView()),
     );
+
+    // return Stack(
+    //   children: [
+    //     MoodView(),
+
+    //     // SheetViewport(
+    //     //   child: PagedSheet(
+    //     //     controller: _sheetController,
+    //     //     decoration: MaterialSheetDecoration(
+    //     //       size: SheetSize.fit,
+    //     //       color: ThemeColors.background,
+    //     //       borderRadius: ThemeRadiuses.radiusGeometry16,
+    //     //       clipBehavior: Clip.antiAlias,
+    //     //     ),
+    //     //     navigator: widget.navigator,
+    //     //   ),
+    //     // ),
+    //   ],
+    // );
   }
 
   @override

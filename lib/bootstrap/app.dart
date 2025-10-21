@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/app/router/router.dart';
-import 'package:keep_my_notes/app/shared/theme/app_theme_data.dart';
+import 'package:keep_my_notes/bootstrap/adaptive_app.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      theme: AppThemeData.theme,
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
-    );
+    return const AdaptiveApp();
   }
 }

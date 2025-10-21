@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:keep_my_notes/app/shared/extensions/build_context_extension.dart';
-import 'package:keep_my_notes/features/medications/presentation/pages/medications_page.dart';
-import 'package:keep_my_notes/features/notes/widgets/notes_list.dart';
+import 'package:keep_my_notes/app/shared/widgets/adaptive_scaffold.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return AdaptiveScaffold(
+      title: 'Home',
+      showAppBar: true,
+      child: SafeArea(
+        bottom: false,
         child: Column(
           spacing: 12,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,15 +42,16 @@ class HomePage extends StatelessWidget {
       ),
     );
 
-    // return const MedicationsPage();
-    return const NotesListView();
+    //   // return const MedicationsPage();
+    //   return const NotesListView();
 
-    return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.min,
-        // children: [const MedicinesPage(), Expanded(child: NotesList())],
-        children: [const MedicationsPage(), NotesListView()],
-      ),
-    );
+    //   return Scaffold(
+    //     body: Column(
+    //       mainAxisSize: MainAxisSize.min,
+    //       // children: [const MedicinesPage(), Expanded(child: NotesList())],
+    //       children: [const MedicationsPage(), NotesListView()],
+    //     ),
+    //   );
+    // }
   }
 }

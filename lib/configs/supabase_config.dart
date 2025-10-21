@@ -6,9 +6,9 @@ final supabase = Supabase.instance.client;
 
 Future<void> initSupabase() async {
   final String? dbUrl = dotenv.env['DB_URL'];
-  final String? anonKey = dotenv.env['DB_ANON_KEY'];
+  final String? publishableKey = dotenv.env['SB_PUBLISHABLE_KEY'];
 
-  if (dbUrl == null || anonKey == null) {
+  if (dbUrl == null || publishableKey == null) {
     throw ErrorDescription(
       'You are probably forget to provide "DB_URL" or "DB_ANON_KEY',
     );
@@ -16,7 +16,7 @@ Future<void> initSupabase() async {
 
   await Supabase.initialize(
     url: dbUrl,
-    anonKey: anonKey,
+    anonKey: publishableKey,
     headers: {'Content-Type': 'application/json'},
     debug: kDebugMode,
   );

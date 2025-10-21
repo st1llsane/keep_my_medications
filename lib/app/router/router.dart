@@ -13,10 +13,10 @@ final _navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final GoRouter router = GoRouter(
   navigatorKey: _navigatorKey,
   // initialLocation: AppRoutes.home.path,
-  initialLocation: AppRoutes.medications.path,
+  initialLocation: AppRoutes.mood.path,
   routes: [homeRoutes],
-  debugLogDiagnostics: true,
   observers: [_NavigatorObserver()],
+  debugLogDiagnostics: true,
 );
 
 class _NavigatorObserver extends NavigatorObserver {

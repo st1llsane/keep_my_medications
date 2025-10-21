@@ -9,6 +9,7 @@ class AppThemeData {
       useMaterial3: true,
       brightness: Brightness.light,
       scaffoldBackgroundColor: ThemeColors.background,
+
       colorScheme: const ColorScheme.light(
         primary: CupertinoColors.systemBlue,
         onPrimary: Colors.white,
@@ -19,6 +20,7 @@ class AppThemeData {
         surface: Colors.red,
         onSurface: Colors.white,
       ),
+
       textTheme: const TextTheme(
         bodySmall: ThemeTextStyles.bodyTextS,
         bodyMedium: ThemeTextStyles.bodyTextM,
@@ -30,15 +32,18 @@ class AppThemeData {
         titleMedium: ThemeTextStyles.heading20,
         titleLarge: ThemeTextStyles.heading22,
       ),
+
       appBarTheme: const AppBarTheme(
         backgroundColor: ThemeColors.background,
         titleTextStyle: ThemeTextStyles.heading18,
         // actionsIconTheme: IconThemeData(),
         centerTitle: true,
       ),
+
       cupertinoOverrideTheme: const CupertinoThemeData(
         barBackgroundColor: ThemeColors.background,
       ),
+
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           textStyle: WidgetStatePropertyAll(ThemeTextStyles.bodyText14),
