@@ -36,6 +36,7 @@ dependencies:
   json_annotation: ^4.9.0
   smooth_sheets: ^0.15.0
   supabase_flutter: ^2.10.3
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   build_runner: ^2.9.0
@@ -52,6 +53,7 @@ flutter:
   uses-material-design: true
   assets:
     - .env
+    - assets/images/
     - assets/images/mood/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

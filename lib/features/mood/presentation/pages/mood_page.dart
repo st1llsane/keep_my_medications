@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_my_notes/app/shared/widgets/widgets_exports.dart';
+import 'package:keep_my_notes/configs/get_it_config.dart';
+import 'package:keep_my_notes/features/mood/presentation/bloc/mood_cubit.dart';
 import 'package:keep_my_notes/features/mood/presentation/widgets/mood_view.dart';
 import 'package:smooth_sheets/smooth_sheets.dart';
 
@@ -27,7 +30,13 @@ class _MoodPageState extends State<MoodPage> {
     return AdaptiveScaffold(
       title: 'Mood',
       showAppBar: true,
-      child: SafeArea(bottom: false, child: MoodView()),
+      child: SafeArea(
+        bottom: false,
+        child: BlocProvider<MoodCubit>(
+          create: (_) => locator<MoodCubit>(),
+          child: const MoodView(),
+        ),
+      ),
     );
 
     // return Stack(

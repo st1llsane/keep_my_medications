@@ -11,7 +11,7 @@ class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<RegistrationCubit>(),
+      create: (_) => locator<RegistrationCubit>(),
       child: BlocBuilder<RegistrationCubit, RegistrationState>(
         builder: builder,
       ),

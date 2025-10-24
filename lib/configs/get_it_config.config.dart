@@ -23,6 +23,8 @@ import 'package:keep_my_notes/features/medications/data/repositories/medications
     as _i1049;
 import 'package:keep_my_notes/features/medications/presentation/blocs/medications_bloc.dart'
     as _i650;
+import 'package:keep_my_notes/features/mood/presentation/bloc/mood_cubit.dart'
+    as _i620;
 
 extension GetItInjectableX on _i174.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -31,6 +33,7 @@ extension GetItInjectableX on _i174.GetIt {
     _i526.EnvironmentFilter? environmentFilter,
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
+    gh.factory<_i620.MoodCubit>(() => _i620.MoodCubit());
     gh.factory<_i642.MedicationsDataSource>(
       () => _i642.MedicationsDataSourceImpl(),
     );
