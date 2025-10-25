@@ -5,6 +5,7 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/get_it_config.config.dart"
+    - "bricks/**"
   language:
     strict-inference: true
     strict-raw-types: false

@@ -9,7 +9,7 @@ part 'mood_state.dart';
 
 @injectable
 class MoodCubit extends Cubit<MoodState> {
-  MoodCubit() : super(MoodState()) {
+  MoodCubit() : super(const MoodState()) {
     _getMoodItems();
   }
 
