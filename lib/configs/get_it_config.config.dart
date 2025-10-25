@@ -17,8 +17,6 @@ import 'package:keep_my_notes/features/auth/sign_up/data/repositories/registrati
     as _i912;
 import 'package:keep_my_notes/features/auth/sign_up/presentation/cubits/registration_cubit.dart'
     as _i807;
-import 'package:keep_my_notes/features/fifa/presentation/bloc/test_cubit.dart'
-    as _i29;
 import 'package:keep_my_notes/features/medications/data/data_sources/medications_data_source.dart'
     as _i642;
 import 'package:keep_my_notes/features/medications/data/repositories/medications_repository.dart'
@@ -36,7 +34,6 @@ extension GetItInjectableX on _i174.GetIt {
   }) {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     gh.factory<_i620.MoodCubit>(() => _i620.MoodCubit());
-    gh.factory<_i29.TestCubit>(() => _i29.TestCubit());
     gh.factory<_i642.MedicationsDataSource>(
       () => _i642.MedicationsDataSourceImpl(),
     );
