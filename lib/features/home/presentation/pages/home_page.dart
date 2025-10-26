@@ -41,17 +41,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-
-    //   // return const MedicationsPage();
-    //   return const NotesListView();
-
-    //   return Scaffold(
-    //     body: Column(
-    //       mainAxisSize: MainAxisSize.min,
-    //       // children: [const MedicinesPage(), Expanded(child: NotesList())],
-    //       children: [const MedicationsPage(), NotesListView()],
-    //     ),
-    //   );
-    // }
   }
 }

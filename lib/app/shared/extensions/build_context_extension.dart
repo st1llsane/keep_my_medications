@@ -6,5 +6,7 @@ extension BuildContextExtension on BuildContext {
 
   TextTheme get textTheme => TextTheme.of(this);
 
+  MediaQueryData get mediaQuery => MediaQuery.of(this);
+
   RoutesNavigator get router => RoutesNavigator(context: this);
 }

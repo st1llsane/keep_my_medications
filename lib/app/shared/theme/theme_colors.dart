@@ -9,6 +9,9 @@ abstract class ThemeColors {
   static const Color secondary = Color(0xFFE9EAEE);
   static const Color secondaryDark = Color(0xFFD6DADF);
 
+  // Card
+  static const Color card = Color(0xFFE9EAEE);
+
   // Accent
   static const Color accent1 = Color(0xFF50C879);
   static const Color accent1Light = Color(0xFFEFF9F1);
@@ -26,9 +29,9 @@ abstract class ThemeColors {
   static const Color success = Color(0xFF50C879);
 
   // Mood
-  static const Color moodGreat = Color(0xFF4ade80);
-  static const Color moodGood = Color(0xFFbef264);
-  static const Color okay = Color(0xFFfde047);
-  static const Color moodNotOkay = Color(0xFFfb923c);
   static const Color moodBad = Color(0xFFef4444);
+  static const Color moodNotOkay = Color(0xFFfb923c);
+  static const Color moodOkay = Color(0xFFfde047);
+  static const Color moodGood = Color(0xFFbef264);
+  static const Color moodGreat = Color(0xFF4ade80);
 }

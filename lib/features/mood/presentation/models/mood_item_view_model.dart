@@ -1,3 +1,7 @@
+import 'package:flutter/widgets.dart';
+import 'package:keep_my_notes/app/shared/enums/mood_rating.dart';
+import 'package:keep_my_notes/features/mood/presentation/utils/mood_color_creator.dart';
+
 class MoodItemViewModel {
   const MoodItemViewModel({
     required this.name,
@@ -7,7 +11,12 @@ class MoodItemViewModel {
   });
 
   final String name;
-  final int rating;
+  final MoodRating rating;
   final String imagePath;
   final bool isSelected;
+
+  Color get color => MoodColorCreator.createMoodColor(rating);
+
+  Color get itemColor =>
+      MoodColorCreator.createMoodColor(rating).withValues(alpha: .3);
 }

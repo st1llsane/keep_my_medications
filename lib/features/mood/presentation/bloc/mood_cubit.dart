@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:keep_my_notes/app/shared/constants/assets.dart';
+import 'package:keep_my_notes/app/shared/enums/mood_rating.dart';
 import 'package:keep_my_notes/features/mood/presentation/models/mood_item_view_model.dart';
 
 part 'mood_cubit.freezed.dart';
@@ -14,25 +15,29 @@ class MoodCubit extends Cubit<MoodState> {
   }
 
   final List<MoodItemViewModel> _moodItems = [
-    const MoodItemViewModel(name: 'bad', rating: 1, imagePath: Assets.moodBad1),
+    const MoodItemViewModel(
+      name: 'bad',
+      rating: MoodRating.bad,
+      imagePath: Assets.moodBad1,
+    ),
     const MoodItemViewModel(
       name: 'notOkay',
-      rating: 2,
+      rating: MoodRating.notOkay,
       imagePath: Assets.moodNotOkay2,
     ),
     const MoodItemViewModel(
       name: 'okay',
-      rating: 3,
+      rating: MoodRating.okay,
       imagePath: Assets.moodOkay3,
     ),
     const MoodItemViewModel(
       name: 'good',
-      rating: 4,
+      rating: MoodRating.good,
       imagePath: Assets.moodGood4,
     ),
     const MoodItemViewModel(
       name: 'great',
-      rating: 5,
+      rating: MoodRating.great,
       imagePath: Assets.moodGreat5,
     ),
   ];

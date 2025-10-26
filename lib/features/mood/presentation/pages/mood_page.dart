@@ -34,6 +34,7 @@ class _MoodPageState extends State<MoodPage> {
         bottom: false,
         child: BlocProvider<MoodCubit>(
           create: (_) => locator<MoodCubit>(),
+          lazy: false,
           child: const MoodView(),
         ),
       ),
@@ -42,7 +43,6 @@ class _MoodPageState extends State<MoodPage> {
     // return Stack(
     //   children: [
     //     MoodView(),
-
     //     // SheetViewport(
     //     //   child: PagedSheet(
     //     //     controller: _sheetController,
