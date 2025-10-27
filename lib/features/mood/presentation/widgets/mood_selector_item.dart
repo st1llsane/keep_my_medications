@@ -22,27 +22,27 @@ class _MoodSelectorItemState extends State<MoodSelectorItem>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: Durations.short3,
+      duration: Durations.short4,
       vsync: this,
     );
-    _scaleAnimation = Tween<double>(begin: 1, end: 1.15).animate(
+    _scaleAnimation = Tween<double>(begin: 1, end: 1.18).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) {
-        _animationController.forward().then((_) {
-          _animationController.reverse();
-        });
-      },
-      child: AnimatedBuilder(
-        animation: _scaleAnimation,
-        builder: (context, child) {
-          return Transform.scale(
-            scale: _scaleAnimation.value,
+    return AnimatedBuilder(
+      animation: _scaleAnimation,
+      builder: (context, child) {
+        return Transform.scale(
+          scale: _scaleAnimation.value,
+          child: GestureDetector(
+            onTapDown: (_) {
+              _animationController.forward().then((_) {
+                _animationController.reverse();
+              });
+            },
             child: Container(
               width: 52,
               height: 52,
@@ -58,9 +58,9 @@ class _MoodSelectorItemState extends State<MoodSelectorItem>
               ),
               child: Center(child: Image.asset(height: 32, item.imagePath)),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 

@@ -10,7 +10,7 @@ abstract class ThemeColors {
   static const Color secondaryDark = Color(0xFFD6DADF);
 
   // Card
-  static const Color card = Color(0xFFE9EAEE);
+  static const Color card = Color(0xFFFBF2FC);
 
   // Accent
   static const Color accent1 = Color(0xFF50C879);

@@ -9,6 +9,7 @@ abstract class AdaptiveScaffold extends StatelessWidget {
     required Widget child,
     String? title,
     String? previousPageTitle,
+    Color? backgroundColor = const Color(0xFFFFFFFF),
     bool showAppBar = false,
   }) {
     assert(
@@ -24,12 +25,14 @@ abstract class AdaptiveScaffold extends StatelessWidget {
         ? _CupertinoScaffold(
             title: title,
             previousPageTitle: previousPageTitle,
+            backgroundColor: backgroundColor,
             showAppBar: showAppBar,
             child: child,
           )
         : _MaterialScaffold(
             title: title,
             previousPageTitle: previousPageTitle,
+            backgroundColor: backgroundColor,
             showAppBar: showAppBar,
             child: child,
           );
@@ -41,17 +44,20 @@ class _CupertinoScaffold extends StatelessWidget implements AdaptiveScaffold {
     required this.child,
     this.title,
     this.previousPageTitle,
+    this.backgroundColor,
     required this.showAppBar,
   });
 
   final Widget child;
   final String? title;
   final String? previousPageTitle;
+  final Color? backgroundColor;
   final bool showAppBar;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: backgroundColor,
       navigationBar: showAppBar
           ? CupertinoNavigationBar(
               middle: title != null ? Text(title!) : null,
@@ -72,17 +78,20 @@ class _MaterialScaffold extends StatelessWidget implements AdaptiveScaffold {
     required this.child,
     this.title,
     this.previousPageTitle,
+    this.backgroundColor,
     required this.showAppBar,
   });
 
   final Widget child;
   final String? title;
   final String? previousPageTitle;
+  final Color? backgroundColor;
   final bool showAppBar;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: showAppBar
           ? AppBar(title: Text(title!, style: context.textTheme.titleMedium))
           : null,

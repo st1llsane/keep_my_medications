@@ -30,6 +30,7 @@ class _MoodPageState extends State<MoodPage> {
     return AdaptiveScaffold(
       title: 'Mood',
       showAppBar: true,
+      backgroundColor: const Color(0xFFF6ECFD),
       child: SafeArea(
         bottom: false,
         child: BlocProvider<MoodCubit>(

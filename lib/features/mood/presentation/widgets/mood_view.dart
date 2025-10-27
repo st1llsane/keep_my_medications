@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:keep_my_notes/app/shared/constants/paddings.dart';
 import 'package:keep_my_notes/features/mood/presentation/widgets/mood_selector.dart';
 
 class MoodView extends StatelessWidget {
@@ -6,6 +7,8 @@ class MoodView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [MoodSelector()]);
+    return const Column(
+      children: [Padding(padding: Paddings.container, child: MoodSelector())],
+    );
   }
 }
