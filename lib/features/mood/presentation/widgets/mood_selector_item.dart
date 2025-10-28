@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_my_notes/app/shared/extensions/build_context_extension.dart';
+import 'package:keep_my_notes/features/mood/presentation/bloc/mood_cubit.dart';
 import 'package:keep_my_notes/features/mood/presentation/models/mood_item_view_model.dart';
 
 class MoodSelectorItem extends StatefulWidget {
@@ -42,6 +44,7 @@ class _MoodSelectorItemState extends State<MoodSelectorItem>
               _animationController.forward().then((_) {
                 _animationController.reverse();
               });
+              context.read<MoodCubit>().selectMood(item.rating);
             },
             child: Container(
               width: 54,

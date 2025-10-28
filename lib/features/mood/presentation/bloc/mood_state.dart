@@ -9,6 +9,7 @@ abstract class MoodState with _$MoodState {
   const factory MoodState({
     @Default(MoodStateStatus.loading) MoodStateStatus status,
     @Default([]) List<MoodItemViewModel> moodItems,
+    MoodRating? selectedMoodRating,
   }) = _MoodState;
 
   bool get isFailure => status == MoodStateStatus.failure;

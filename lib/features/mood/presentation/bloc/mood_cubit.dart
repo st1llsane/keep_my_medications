@@ -47,4 +47,19 @@ class MoodCubit extends Cubit<MoodState> {
       state.copyWith(status: MoodStateStatus.success, moodItems: _moodItems),
     );
   }
+
+  void selectMood(MoodRating rating) {
+    final updatedItems = _moodItems
+        .map(
+          (item) => MoodItemViewModel(
+            name: item.name,
+            rating: item.rating,
+            imagePath: item.imagePath,
+            isSelected: item.rating == rating,
+          ),
+        )
+        .toList();
+
+    emit(state.copyWith(moodItems: updatedItems, selectedMoodRating: rating));
+  }
 }

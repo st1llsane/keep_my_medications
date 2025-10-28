@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-/// Widget that creates a blurred background effect with colored
-/// blobs.
-class BlurredBlobsBackground extends StatelessWidget {
+/// Widget that creates a blurred background effect with colored blobs
+/// and animated color transitions.
+class BlurredBlobsBackground extends StatefulWidget {
   const BlurredBlobsBackground({
     super.key,
     this.blurAmount = 100.0,
@@ -17,34 +17,94 @@ class BlurredBlobsBackground extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
-    final colors =
-        customColors ??
-        [
-          Colors.purple.withValues(alpha: 0.3),
-          Colors.blue.withValues(alpha: 0.3),
-          Colors.pink.withValues(alpha: 0.3),
-          Colors.orange.withValues(alpha: 0.3),
-        ];
+  State<BlurredBlobsBackground> createState() => _BlurredBlobsBackgroundState();
+}
 
+class _BlurredBlobsBackgroundState extends State<BlurredBlobsBackground>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  List<Color> _previousColors = [];
+  List<Color> _targetColors = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 600),
+      vsync: this,
+    );
+
+    _targetColors =
+        widget.customColors ??
+        [
+          Colors.purple.withValues(alpha: 0.15),
+          Colors.blue.withValues(alpha: 0.15),
+          Colors.pink.withValues(alpha: 0.15),
+          Colors.orange.withValues(alpha: 0.15),
+        ];
+    _previousColors = _targetColors;
+  }
+
+  @override
+  void didUpdateWidget(BlurredBlobsBackground oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.customColors != oldWidget.customColors) {
+      _previousColors = _targetColors;
+      _targetColors = widget.customColors ?? _targetColors;
+      _animationController.forward(from: 0);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return ClipRect(
       clipBehavior: Clip.hardEdge,
       child: Stack(
         children: [
-          // Background blobs
+          // Background blobs with animated colors
           Positioned.fill(
-            child: CustomPaint(
-              painter: _BlurredBackgroundPainter(colors: colors),
+            child: AnimatedBuilder(
+              animation: _animationController,
+              builder: (context, child) {
+                final interpolatedColors = List.generate(_targetColors.length, (
+                  index,
+                ) {
+                  if (index >= _previousColors.length) {
+                    return _targetColors[index];
+                  }
+
+                  return Color.lerp(
+                    _previousColors[index],
+                    _targetColors[index],
+                    _animationController.value,
+                  )!;
+                });
+
+                return CustomPaint(
+                  painter: _BlurredBackgroundPainter(
+                    colors: interpolatedColors,
+                  ),
+                );
+              },
             ),
           ),
           // Blur effect
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: blurAmount, sigmaY: blurAmount),
-            child: child,
+            filter: ImageFilter.blur(
+              sigmaX: widget.blurAmount,
+              sigmaY: widget.blurAmount,
+            ),
+            child: widget.child,
           ),
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 }
 

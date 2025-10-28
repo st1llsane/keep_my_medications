@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MoodState {
 
- MoodStateStatus get status; List<MoodItemViewModel> get moodItems;
+ MoodStateStatus get status; List<MoodItemViewModel> get moodItems; MoodRating? get selectedMoodRating;
 /// Create a copy of MoodState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -27,7 +27,7 @@ $MoodStateCopyWith<MoodState> get copyWith => _$MoodStateCopyWithImpl<MoodState>
 
 @override
 String toString() {
-  return 'MoodState(status: $status, moodItems: $moodItems)';
+  return 'MoodState(status: $status, moodItems: $moodItems, selectedMoodRating: $selectedMoodRating)';
 }
 
 
@@ -38,7 +38,7 @@ abstract mixin class $MoodStateCopyWith<$Res>  {
   factory $MoodStateCopyWith(MoodState value, $Res Function(MoodState) _then) = _$MoodStateCopyWithImpl;
 @useResult
 $Res call({
- MoodStateStatus status, List<MoodItemViewModel> moodItems
+ MoodStateStatus status, List<MoodItemViewModel> moodItems, MoodRating? selectedMoodRating
 });
 
 
@@ -55,11 +55,12 @@ class _$MoodStateCopyWithImpl<$Res>
 
 /// Create a copy of MoodState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? moodItems = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? status = null,Object? moodItems = null,Object? selectedMoodRating = freezed,}) {
   return _then(_self.copyWith(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as MoodStateStatus,moodItems: null == moodItems ? _self.moodItems : moodItems // ignore: cast_nullable_to_non_nullable
-as List<MoodItemViewModel>,
+as List<MoodItemViewModel>,selectedMoodRating: freezed == selectedMoodRating ? _self.selectedMoodRating : selectedMoodRating // ignore: cast_nullable_to_non_nullable
+as MoodRating?,
   ));
 }
 
@@ -71,7 +72,7 @@ as List<MoodItemViewModel>,
 
 
 class _MoodState extends MoodState {
-  const _MoodState({this.status = MoodStateStatus.loading, final  List<MoodItemViewModel> moodItems = const []}): _moodItems = moodItems,super._();
+  const _MoodState({this.status = MoodStateStatus.loading, final  List<MoodItemViewModel> moodItems = const [], this.selectedMoodRating}): _moodItems = moodItems,super._();
   
 
 @override@JsonKey() final  MoodStateStatus status;
@@ -82,6 +83,7 @@ class _MoodState extends MoodState {
   return EqualUnmodifiableListView(_moodItems);
 }
 
+@override final  MoodRating? selectedMoodRating;
 
 /// Create a copy of MoodState
 /// with the given fields replaced by the non-null parameter values.
@@ -95,7 +97,7 @@ _$MoodStateCopyWith<_MoodState> get copyWith => __$MoodStateCopyWithImpl<_MoodSt
 
 @override
 String toString() {
-  return 'MoodState(status: $status, moodItems: $moodItems)';
+  return 'MoodState(status: $status, moodItems: $moodItems, selectedMoodRating: $selectedMoodRating)';
 }
 
 
@@ -106,7 +108,7 @@ abstract mixin class _$MoodStateCopyWith<$Res> implements $MoodStateCopyWith<$Re
   factory _$MoodStateCopyWith(_MoodState value, $Res Function(_MoodState) _then) = __$MoodStateCopyWithImpl;
 @override @useResult
 $Res call({
- MoodStateStatus status, List<MoodItemViewModel> moodItems
+ MoodStateStatus status, List<MoodItemViewModel> moodItems, MoodRating? selectedMoodRating
 });
 
 
@@ -123,11 +125,12 @@ class __$MoodStateCopyWithImpl<$Res>
 
 /// Create a copy of MoodState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? moodItems = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? status = null,Object? moodItems = null,Object? selectedMoodRating = freezed,}) {
   return _then(_MoodState(
 status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as MoodStateStatus,moodItems: null == moodItems ? _self._moodItems : moodItems // ignore: cast_nullable_to_non_nullable
-as List<MoodItemViewModel>,
+as List<MoodItemViewModel>,selectedMoodRating: freezed == selectedMoodRating ? _self.selectedMoodRating : selectedMoodRating // ignore: cast_nullable_to_non_nullable
+as MoodRating?,
   ));
 }
 
