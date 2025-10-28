@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Align(alignment: Alignment.center, child: ThemeSwitcher()),
+            // Align(alignment: Alignment.center, child: ThemeSwitcher()),
             Align(
               alignment: Alignment.center,
               child: TextButton(
