@@ -1,9 +1,9 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_my_notes/app/router/router.dart';
 import 'package:keep_my_notes/app/shared/theme/app_theme_data.dart';
+import 'package:keep_my_notes/app/shared/theme/cubit/theme_cubit.dart';
+import 'package:keep_my_notes/configs/get_it_config.dart';
 
 class AdaptiveApp extends StatelessWidget {
   const AdaptiveApp({this.debugShowCheckedModeBanner = false, super.key});
@@ -12,17 +12,19 @@ class AdaptiveApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cupertinoApp = CupertinoApp.router(
-      routerConfig: router,
-      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+    return BlocProvider<ThemeCubit>(
+      create: (_) => locator<ThemeCubit>(),
+      child: BlocBuilder<ThemeCubit, ThemeState>(
+        builder: (context, themeState) {
+          return MaterialApp.router(
+            theme: AppThemeData.lightTheme,
+            darkTheme: AppThemeData.darkTheme,
+            themeMode: themeState.themeMode,
+            routerConfig: router,
+            debugShowCheckedModeBanner: debugShowCheckedModeBanner,
+          );
+        },
+      ),
     );
-
-    final materialApp = MaterialApp.router(
-      theme: AppThemeData.theme,
-      routerConfig: router,
-      debugShowCheckedModeBanner: debugShowCheckedModeBanner,
-    );
-
-    return Platform.isIOS ? cupertinoApp : materialApp;
   }
 }

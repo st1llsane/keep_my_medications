@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keep_my_notes/app/shared/constants/paddings.dart';
 import 'package:keep_my_notes/app/shared/constants/radiuses.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
+import 'package:keep_my_notes/app/shared/extensions/build_context_extension.dart';
 import 'package:keep_my_notes/features/mood/presentation/bloc/mood_cubit.dart';
 import 'package:keep_my_notes/features/mood/presentation/widgets/mood_selector_item.dart';
 
@@ -21,7 +21,7 @@ class MoodSelector extends StatelessWidget {
             padding: Paddings.card,
             alignment: AlignmentGeometry.center,
             decoration: BoxDecoration(
-              color: ThemeColors.card,
+              color: context.colors.card,
               borderRadius: Radiuses.card,
               boxShadow: [
                 BoxShadow(

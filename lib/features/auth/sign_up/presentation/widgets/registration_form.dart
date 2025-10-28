@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
+import 'package:keep_my_notes/app/shared/extensions/extensions_exports.dart';
 import 'package:keep_my_notes/app/shared/theme/theme_radiuses.dart';
 import 'package:keep_my_notes/app/shared/theme/theme_text_styles.dart';
 
@@ -11,7 +11,7 @@ class RegistrationForm extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 24, bottom: 20),
       decoration: BoxDecoration(
-        color: ThemeColors.background,
+        color: context.colors.background,
         borderRadius: ThemeRadiuses.radiusGeometry16,
       ),
       child: Column(
@@ -21,11 +21,11 @@ class RegistrationForm extends StatelessWidget {
             children: [
               Text(
                 'Sign up to manage your medications',
-                style: ThemeTextStyles.heading22,
+                // style: ThemeTextStyles.heading22,
               ),
               Text(
                 'Sign up to manage your medications',
-                style: ThemeTextStyles.subheading16,
+                // style: ThemeTextStyles.subheading16,
               ),
             ],
           ),

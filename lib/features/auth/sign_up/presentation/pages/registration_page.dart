@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:keep_my_notes/app/shared/extensions/extensions_exports.dart';
 import 'package:keep_my_notes/configs/get_it_config.dart';
 import 'package:keep_my_notes/features/auth/sign_up/domain/states/registration_state.dart';
 import 'package:keep_my_notes/features/auth/sign_up/presentation/cubits/registration_cubit.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
 
 class RegistrationPage extends StatelessWidget {
   const RegistrationPage({super.key});
@@ -20,7 +20,7 @@ class RegistrationPage extends StatelessWidget {
 
   Widget builder(BuildContext context, RegistrationState state) {
     return Scaffold(
-      backgroundColor: ThemeColors.background,
+      backgroundColor: context.colors.background,
       body: Column(children: [
       
     ],),

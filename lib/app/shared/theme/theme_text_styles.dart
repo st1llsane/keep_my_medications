@@ -1,62 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
 
 abstract class ThemeTextStyles {
   // Body text
-  static const TextStyle bodyTextS = TextStyle(
-    color: ThemeColors.foreground,
+  static TextStyle bodyTextS(Color color) => TextStyle(
+    color: color,
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1,
   );
-  static const TextStyle bodyTextM = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle bodyTextM(Color color) => TextStyle(
+    color: color,
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1,
   );
-  static const TextStyle bodyText14 = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle bodyText14(Color color) => TextStyle(
+    color: color,
     fontSize: 14,
     fontWeight: FontWeight.w400,
     height: 1,
   );
 
   // Subheading
-  static const TextStyle subheading14 = TextStyle(
-    color: ThemeColors.foreground,
+  static TextStyle subheading14(Color color) => TextStyle(
+    color: color,
     fontSize: 14,
     fontWeight: FontWeight.w500,
     height: 1,
   );
-  static const TextStyle subheading16 = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle subheading16(Color color) => TextStyle(
+    color: color,
     fontSize: 16,
     fontWeight: FontWeight.w500,
     height: 1,
   );
-  static const TextStyle subheading18 = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle subheading18(Color color) => TextStyle(
+    color: color,
     fontSize: 18,
     fontWeight: FontWeight.w500,
     height: 1,
   );
 
   // Heading
-  static const TextStyle heading18 = TextStyle(
-    color: ThemeColors.foreground,
+  static TextStyle heading18(Color color) => TextStyle(
+    color: color,
     fontSize: 18,
     fontWeight: FontWeight.w700,
     height: 1,
   );
-  static const TextStyle heading20 = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle heading20(Color color) => TextStyle(
+    color: color,
     fontSize: 20,
     fontWeight: FontWeight.w700,
     height: 1,
   );
-  static const TextStyle heading22 = TextStyle(
-    color: ThemeColors.foreground,
+
+  static TextStyle heading22(Color color) => TextStyle(
+    color: color,
     fontSize: 22,
     fontWeight: FontWeight.w700,
     height: 1,

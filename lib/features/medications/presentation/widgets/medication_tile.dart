@@ -16,9 +16,9 @@ class MedicationTile extends StatelessWidget {
       alignment: Alignment.topLeft,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
       decoration: BoxDecoration(
-        color: ThemeColors.background,
+        color: context.colors.background,
         borderRadius: ThemeRadiuses.radiusGeometry12,
-        border: Border.all(color: ThemeColors.secondary),
+        border: Border.all(color: context.colors.secondary),
       ),
       child: Column(
         spacing: 12,
@@ -33,9 +33,9 @@ class MedicationTile extends StatelessWidget {
             RichText(
               textAlign: TextAlign.start,
               text: TextSpan(
-                style: ThemeTextStyles.subheading18.copyWith(
-                  color: ThemeColors.foregroundSecondary,
-                ),
+                // style: ThemeTextStyles.subheading18.copyWith(
+                //   color: ThemeColors.foregroundSecondary,
+                // ),
                 children: [
                   if (medication.description != null)
                     TextSpan(text: medication.description ?? 'Без описания'),
@@ -56,7 +56,7 @@ class MedicationTile extends StatelessWidget {
                   height: 8,
                   margin: const EdgeInsets.only(top: 1),
                   decoration: BoxDecoration(
-                    color: ThemeColors.secondary,
+                    color: context.colors.secondary,
                     borderRadius: ThemeRadiuses.radiusGeometry50,
                   ),
                 ),
@@ -64,9 +64,9 @@ class MedicationTile extends StatelessWidget {
               if (medication.perDayCount != null)
                 Text(
                   medication.perDayCount.toString(),
-                  style: ThemeTextStyles.subheading16.copyWith(
-                    color: ThemeColors.foregroundSecondary,
-                  ),
+                  // style: ThemeTextStyles.subheading16.copyWith(
+                  //   color: ThemeColors.foregroundSecondary,
+                  // ),
                 ),
             ],
           ),

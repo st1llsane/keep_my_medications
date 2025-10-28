@@ -4,50 +4,47 @@ import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
 import 'package:keep_my_notes/app/shared/theme/theme_text_styles.dart';
 
 class AppThemeData {
-  static ThemeData get theme {
+  static ThemeData get lightTheme => _buildTheme(
+    brightness: Brightness.light,
+    colors: const LightThemeColors(),
+  );
+
+  static ThemeData get darkTheme =>
+      _buildTheme(brightness: Brightness.dark, colors: const DarkThemeColors());
+
+  static ThemeData _buildTheme({
+    required Brightness brightness,
+    required ThemeColors colors,
+  }) {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.light,
-      scaffoldBackgroundColor: ThemeColors.background,
-
-      colorScheme: const ColorScheme.light(
-        primary: CupertinoColors.systemBlue,
-        onPrimary: Colors.white,
-        secondary: Colors.red,
-        onSecondary: Colors.white,
-        error: Colors.red,
-        onError: Colors.white,
-        surface: Colors.red,
-        onSurface: Colors.white,
+      brightness: brightness,
+      scaffoldBackgroundColor: colors.background,
+      textTheme: TextTheme(
+        bodySmall: ThemeTextStyles.bodyTextS(colors.foreground),
+        bodyMedium: ThemeTextStyles.bodyTextM(colors.foreground),
+        bodyLarge: ThemeTextStyles.bodyText14(colors.foreground),
+        headlineSmall: ThemeTextStyles.subheading14(colors.foreground),
+        headlineMedium: ThemeTextStyles.subheading16(colors.foreground),
+        headlineLarge: ThemeTextStyles.subheading18(colors.foreground),
+        titleSmall: ThemeTextStyles.heading18(colors.foreground),
+        titleMedium: ThemeTextStyles.heading20(colors.foreground),
+        titleLarge: ThemeTextStyles.heading22(colors.foreground),
       ),
-
-      textTheme: const TextTheme(
-        bodySmall: ThemeTextStyles.bodyTextS,
-        bodyMedium: ThemeTextStyles.bodyTextM,
-        bodyLarge: ThemeTextStyles.bodyText14,
-        headlineSmall: ThemeTextStyles.subheading14,
-        headlineMedium: ThemeTextStyles.subheading16,
-        headlineLarge: ThemeTextStyles.subheading18,
-        titleSmall: ThemeTextStyles.heading18,
-        titleMedium: ThemeTextStyles.heading20,
-        titleLarge: ThemeTextStyles.heading22,
-      ),
-
-      appBarTheme: const AppBarTheme(
-        backgroundColor: ThemeColors.background,
-        titleTextStyle: ThemeTextStyles.heading18,
-        // actionsIconTheme: IconThemeData(),
+      appBarTheme: AppBarTheme(
+        backgroundColor: colors.background,
+        titleTextStyle: ThemeTextStyles.heading18(colors.foreground),
         centerTitle: true,
       ),
-
-      cupertinoOverrideTheme: const CupertinoThemeData(
-        barBackgroundColor: ThemeColors.background,
+      cupertinoOverrideTheme: CupertinoThemeData(
+        barBackgroundColor: colors.background,
       ),
-
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          textStyle: WidgetStatePropertyAll(ThemeTextStyles.bodyText14),
-          foregroundColor: WidgetStatePropertyAll(ThemeColors.foreground),
+          textStyle: WidgetStatePropertyAll(
+            ThemeTextStyles.bodyText14(colors.foreground),
+          ),
+          foregroundColor: WidgetStatePropertyAll(colors.foreground),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
       ),

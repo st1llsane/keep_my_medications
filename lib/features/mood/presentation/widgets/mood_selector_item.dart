@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:keep_my_notes/app/shared/theme/theme_colors.dart';
+import 'package:keep_my_notes/app/shared/extensions/build_context_extension.dart';
 import 'package:keep_my_notes/features/mood/presentation/models/mood_item_view_model.dart';
 
 class MoodSelectorItem extends StatefulWidget {
@@ -44,15 +44,15 @@ class _MoodSelectorItemState extends State<MoodSelectorItem>
               });
             },
             child: Container(
-              width: 52,
-              height: 52,
+              width: 54,
+              height: 54,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: item.itemColor,
                 border: Border.all(
                   color: item.isSelected
-                      ? ThemeColors.accent1
-                      : ThemeColors.card,
+                      ? context.colors.accent1
+                      : context.colors.card,
                   width: 2,
                 ),
               ),

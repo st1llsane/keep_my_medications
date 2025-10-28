@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:keep_my_notes/app/shared/constants/paddings.dart';
 import 'package:keep_my_notes/features/mood/presentation/widgets/mood_selector.dart';
 
-class MoodView extends StatelessWidget {
-  const MoodView({super.key});
+class MoodPageView extends StatelessWidget {
+  const MoodPageView({super.key});
 
   @override
   Widget build(BuildContext context) {
